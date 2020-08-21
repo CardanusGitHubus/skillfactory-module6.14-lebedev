@@ -5,22 +5,15 @@ let hits = 0;
 let miss = 0;
 let firstHitTime = 0;
 
-function round(event) {
-  // FIXME: надо бы убрать "target" прежде чем искать новый - FIXED!
+function round() {
   $(".target").text("");
   $(".game-field").removeClass("target");
   $(".game-field").removeClass("miss");
 
-  if ($(event.target).hasClass("target")) {
-    miss++;
-    $(event.target).addClass("miss");
-  }
   let divSelector = randomDivId();
   $(divSelector).addClass("target");
-  // TODO: помечать target текущим номером - FIXED!
   $(".target").text(hits + 1);
 
-  // FIXME: тут надо определять при первом клике firstHitTime - FIXED!
   if (hits == 0) {
     firstHitTime = getTimestamp();
   }
@@ -30,7 +23,6 @@ function round(event) {
 }
 
 function endGame() {
-  // FIXME: спрятать игровое поле сначала - FIXED!
   $(".game-field").addClass("d-none");
   $("#start-game").addClass("d-none");
   $("#button-reload").removeClass("d-none");
@@ -44,8 +36,6 @@ function endGame() {
 }
 
 function handleClick(event) {
-  // FIXME: убирать текст со старых таргетов. Кажется есть .text?
-  // $(".target").text(""); - если вызывать отсюда, то при промахе слетает текущий номер таргета, см. function round()  - FIXED!
 
   if ($(event.target).hasClass("target")) {
     hits++;
@@ -54,11 +44,9 @@ function handleClick(event) {
     miss++;
     $(event.target).addClass("miss");
   }
-  // TODO: как-то отмечать если мы промахнулись? См CSS класс .miss - FIXED!
 }
 
 function init() {
-  // TODO: заказчик просил отдельную кнопку, запускающую игру а не просто по загрузке
   $("#start-game").click(round);
 
   $(".game-field").click(handleClick);
@@ -68,4 +56,3 @@ function init() {
 }
 
 $(document).ready(init);
-// alert("Задача состоит в том, чтобы на сетке 6x6 замерять время, за которое пользователь выбирает десять случайных элементов.");

@@ -15,14 +15,13 @@
 
     <div class="container">
       <h1>
-        Тест на реакцию: 10 квадратов
+        Reaction test: 10 fields
         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target=".modal">
           Info
         </button>
       </h1>
       <hr>
 
-      <!-- FIXME: сейчас тут не все слоты, надо добавить нужных - FIXED!-->
       <div class="row">
         <div class="col game-field align-text-bottom" id="slot-11"></div>
         <div class="col game-field align-text-bottom" id="slot-12"></div>
@@ -73,16 +72,15 @@
       </div>
 
       <div id="win-message" class="d-none">
-        <!-- TODO: можно добавить красные квадратики с отрицательным весом и делать счёт попаданий в конце как разницу очков за попадание минус штрафные -->
-        <h2>Вы нашли 10 зелёных квадратов за <span id="total-time-played"></span> секунд, промахов: <span id="miss-counter"></span></h2>
+        <h2>You have found 10 green areas in <span id="total-time-played"></span> seconds, misses: <span id="miss-counter"></span></h2>
       </div>
       <div class="row">
-        <button id="button-reload" class="btn btn-primary d-none">Играть заново</button>
-        <button id="start-game" class="btn btn-primary">Начать</button>
+        <button id="button-reload" class="btn btn-primary d-none">New game</button>
+        <button id="start-game" class="btn btn-primary">Start</button>
         <div class="modal">
           <div class="modal-dialog">
             <div class="modal-content">
-              Задача состоит в том, чтобы на сетке 6x6 замерять время, за которое пользователь выбирает десять случайных элементов.
+              The goal is to pick ten randomly revealing targets at the 6x6 grid.
                 <button type="button" class="close" data-dismiss="modal">
                     <span>&times;</span>
                 </button>
