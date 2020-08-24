@@ -49,7 +49,7 @@ function handleClick(event) {
 function init() {
   $("#start-game").click(round);
 
-  $(".game-field").click(handleClick);
+  $(".game-field").mousedown(handleClick);
   $("#button-reload").click(function () {
     location.reload();
   });
